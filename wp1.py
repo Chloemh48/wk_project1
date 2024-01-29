@@ -5,28 +5,26 @@ Chloe Fabro
 
 import sys
 import os
-import fileinput
 
 def write_file_backwards(file1, file2):
 
     content = []
 
-    for line in fileinput.input(files=(file1,)):
-        content.append(line.rstrip())
+    with open(file1, "rb") as myfile:
+        byte = myfile.read(1)
+        while byte:
+            content.append(byte)
+            byte = myfile.read(1)
 
-    with open(file2, "w") as myfile2:
-        for line in reversed(content):
-            line = line.strip()
-            reversed_line = line[::-1]
-            myfile2.write(reversed_line + "\n")
-    
+    with open(file2, "wb") as file:
+        for byte in reversed(content):
+            file.write(byte)
+  
 
 def main():
     if len(sys.argv) != 3:
         print('Usage: python argument1 argument2 argument3')
         sys.exit(1)  
-
-
 
     file1 = sys.argv[1]
     file2 = sys.argv[2]
