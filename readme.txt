@@ -9,11 +9,11 @@ Usage:
 To use the script, you need to provide two command line arguments: the source file (file1) and the destination file (file2). The command should be structured as follows:
 
 Copy code
-python script_name.py file1 file2
-Replace script_name.py with the actual name of your Python script, file1 with the path to the source file, and file2 with the path to the destination file.
+python wp1.py file1 file2
+Replace wp1.py with the actual name of your Python script, file1 with the path to the source file, and file2 with the path to the destination file.
 
 Example:
-python script_name.py source.bin destination.bin
+python wp1.py file1 file2
 This command will take the contents of source.bin, reverse the order of the bytes, and then write them to destination.bin.
 
 Important Notes:
